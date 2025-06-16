@@ -1,12 +1,75 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import Header from '@/components/Header';
+import HeroSection from '@/components/HeroSection';
+import ProductSection from '@/components/ProductSection';
+import CategorySection from '@/components/CategorySection';
+import TestimonialSection from '@/components/TestimonialSection';
+import Footer from '@/components/Footer';
 
 const Index = () => {
+  const newArrivals = [
+    {
+      image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=300&h=300&fit=crop",
+      title: "Wireless Headphones",
+      price: "15,000 Rwf",
+      rating: 5
+    },
+    {
+      image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=300&h=300&fit=crop",
+      title: "Running Shoes",
+      price: "25,000 Rwf",
+      rating: 5
+    },
+    {
+      image: "https://images.unsplash.com/photo-1586401100295-7a8096fd231e?q=80&w=300&h=300&fit=crop",
+      title: "Handmade Jewelry",
+      price: "8,000 Rwf",
+      rating: 5
+    },
+    {
+      image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=300&h=300&fit=crop",
+      title: "Casual Sneakers",
+      price: "20,000 Rwf",
+      rating: 5
+    }
+  ];
+
+  const topSelling = [
+    {
+      image: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?q=80&w=300&h=300&fit=crop",
+      title: "Designer Jacket",
+      price: "35,000 Rwf",
+      rating: 5
+    },
+    {
+      image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=300&h=300&fit=crop",
+      title: "Cotton T-Shirt",
+      price: "12,000 Rwf",
+      rating: 5
+    },
+    {
+      image: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=300&h=300&fit=crop",
+      title: "Denim Jeans",
+      price: "18,000 Rwf",
+      rating: 5
+    },
+    {
+      image: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?q=80&w=300&h=300&fit=crop",
+      title: "Summer Dress",
+      price: "22,000 Rwf",
+      rating: 5
+    }
+  ];
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-white">
+      <Header />
+      <HeroSection />
+      <ProductSection title="NEW ARRIVALS" products={newArrivals} />
+      <ProductSection title="TOP SELLING" products={topSelling} />
+      <CategorySection />
+      <TestimonialSection />
+      <Footer />
     </div>
   );
 };
