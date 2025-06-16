@@ -19,7 +19,7 @@ const ProductSection = ({ title, products }: ProductSectionProps) => {
         <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
           {title}
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {products.map((product, index) => (
             <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
               <ProductCard {...product} />
