@@ -31,6 +31,30 @@ const Index = () => {
       title: "Casual Sneakers",
       price: "20,000 Rwf",
       rating: 5
+    },
+    {
+      image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?q=80&w=300&h=300&fit=crop",
+      title: "Smart Watch",
+      price: "45,000 Rwf",
+      rating: 5
+    },
+    {
+      image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=300&h=300&fit=crop",
+      title: "Leather Bag",
+      price: "30,000 Rwf",
+      rating: 5
+    },
+    {
+      image: "https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=300&h=300&fit=crop",
+      title: "Sunglasses",
+      price: "12,000 Rwf",
+      rating: 5
+    },
+    {
+      image: "https://images.unsplash.com/photo-1484704849700-f032a568e944?q=80&w=300&h=300&fit=crop",
+      title: "Coffee Mug",
+      price: "5,000 Rwf",
+      rating: 5
     }
   ];
 
@@ -57,6 +81,30 @@ const Index = () => {
       image: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?q=80&w=300&h=300&fit=crop",
       title: "Summer Dress",
       price: "22,000 Rwf",
+      rating: 5
+    },
+    {
+      image: "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?q=80&w=300&h=300&fit=crop",
+      title: "Fashion Boots",
+      price: "28,000 Rwf",
+      rating: 5
+    },
+    {
+      image: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=300&h=300&fit=crop",
+      title: "Winter Coat",
+      price: "50,000 Rwf",
+      rating: 5
+    },
+    {
+      image: "https://images.unsplash.com/photo-1503341504253-dff4815485f1?q=80&w=300&h=300&fit=crop",
+      title: "Polo Shirt",
+      price: "15,000 Rwf",
+      rating: 5
+    },
+    {
+      image: "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=300&h=300&fit=crop",
+      title: "Sport Shorts",
+      price: "10,000 Rwf",
       rating: 5
     }
   ];
