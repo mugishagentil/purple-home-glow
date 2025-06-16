@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {
   return (
-    <section className="bg-gradient-to-r from-purple-50 to-purple-100 py-16">
+    <section className="bg-gradient-to-r from-purple-50 to-purple-100 py-24 min-h-[600px] flex items-center">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="md:w-1/2 mb-8 md:mb-0 animate-slide-in-left">

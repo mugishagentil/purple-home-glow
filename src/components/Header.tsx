@@ -12,10 +12,11 @@ const Header = () => {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-purple rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-sm">R</span>
-              </div>
-              <span className="font-bold text-xl text-gray-900">Rwanda Marketplace</span>
+              <img 
+                src="/placeholder.svg" 
+                alt="Rwanda Marketplace Logo" 
+                className="h-10 w-auto"
+              />
             </div>
 
             {/* Navigation */}
