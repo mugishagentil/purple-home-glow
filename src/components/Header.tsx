@@ -1,6 +1,7 @@
 
 import { Search, ShoppingCart, User, Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 import TopBanner from './TopBanner';
 
 const Header = () => {
@@ -12,17 +13,19 @@ const Header = () => {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="flex items-center space-x-2">
-              <img 
-                src="/placeholder.svg" 
-                alt="Rwanda Marketplace Logo" 
-                className="h-10 w-auto"
-              />
+              <Link to="/">
+                <img 
+                  src="/placeholder.svg" 
+                  alt="Rwanda Marketplace Logo" 
+                  className="h-12 w-auto"
+                />
+              </Link>
             </div>
 
             {/* Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
-              <a href="#" className="text-gray-700 hover:text-purple transition-colors">Home</a>
-              <a href="#" className="text-gray-700 hover:text-purple transition-colors">Products</a>
+              <Link to="/" className="text-gray-700 hover:text-purple transition-colors">Home</Link>
+              <Link to="/products" className="text-gray-700 hover:text-purple transition-colors">Products</Link>
               <a href="#" className="text-gray-700 hover:text-purple transition-colors">Categories</a>
               <a href="#" className="text-gray-700 hover:text-purple transition-colors">About</a>
               <a href="#" className="text-gray-700 hover:text-purple transition-colors">Contact</a>
