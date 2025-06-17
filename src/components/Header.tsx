@@ -17,7 +17,7 @@ const Header = () => {
                 <img 
                   src="/placeholder.svg" 
                   alt="Rwanda Marketplace Logo" 
-                  className="h-12 w-auto"
+                  className="h-16 w-auto"
                 />
               </Link>
             </div>
@@ -28,7 +28,7 @@ const Header = () => {
               <Link to="/products" className="text-gray-700 hover:text-purple transition-colors">Products</Link>
               <a href="#" className="text-gray-700 hover:text-purple transition-colors">Categories</a>
               <a href="#" className="text-gray-700 hover:text-purple transition-colors">About</a>
-              <a href="#" className="text-gray-700 hover:text-purple transition-colors">Contact</a>
+              <Link to="/contact" className="text-gray-700 hover:text-purple transition-colors">Contact</Link>
             </nav>
 
             {/* Search and Actions */}
