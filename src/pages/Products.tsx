@@ -13,49 +13,52 @@ const Products = () => {
 
   const products = [
     {
-      image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=300&h=300&fit=crop",
-      title: "Men T-shirt",
-      price: "5000 Rwf",
+      image: "/Head Phone.jpeg",
+      title: "Wireless Headphones",
+      price: "15,000 Rwf",
+      rating: 5
     },
     {
-      image: "https://images.unsplash.com/photo-1594736797933-d0c56ba4faa0?q=80&w=300&h=300&fit=crop",
-      title: "M in Rwanda Dress",
-      price: "10000 Rwf",
+      image: "/Jordan1.jpeg",
+      title: "Jordan 1 Shoes",
+      price: "25,000 Rwf",
+      rating: 5
     },
     {
-      image: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?q=80&w=300&h=300&fit=crop",
-      title: "Men Shirt",
-      price: "10000 Rwf",
+      image: "/Shoulder Bag.jpeg",
+      title: "Shoulder Bag",
+      price: "18,000 Rwf",
+      rating: 5
     },
     {
-      image: "https://images.unsplash.com/photo-1484704849700-f032a568e944?q=80&w=300&h=300&fit=crop",
-      title: "Mustela Hydra lotion",
-      price: "35000 Rwf",
+      image: "/BRUCEGAO.jpeg",
+      title: "BRUCEGAO's Alligator Bag",
+      price: "20,000 Rwf",
+      rating: 5
     },
     {
-      image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=300&h=300&fit=crop",
-      title: "Closed women leather shoes",
-      price: "20000 Rwf",
+      image: "/Trivet Set.jpeg",
+      title: "Trivet Set",
+      price: "45,000 Rwf",
+      rating: 5
     },
     {
-      image: "https://images.unsplash.com/photo-1484704849700-f032a568e944?q=80&w=300&h=300&fit=crop",
-      title: "Mug set 6 pcs",
-      price: "10000 Rwf",
+      image: "/Dress.jpeg",
+      title: "Dress",
+      price: "30,000 Rwf",
+      rating: 5
     },
     {
-      image: "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?q=80&w=300&h=300&fit=crop",
-      title: "Party Short Dress",
-      price: "25000 Rwf",
+      image: "/Samba.jpeg",
+      title: "Samba",
+      price: "12,000 Rwf",
+      rating: 5
     },
     {
-      image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=300&h=300&fit=crop",
-      title: "Afrinie Tote Bag",
-      price: "20000 Rwf",
-    },
-    {
-      image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=300&h=300&fit=crop",
-      title: "Phone Tote Bag",
-      price: "25000 Rwf",
+      image: "/flat shoes.jpeg",
+      title: "Flat Shoes",
+      price: "5,000 Rwf",
+      rating: 5
     }
   ];
 

@@ -16,7 +16,7 @@ const Contact = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=1200&h=400&fit=crop')`
+            backgroundImage: `url('/Convention.jpg')`
           }}
         >
           <div className="absolute inset-0 bg-black bg-opacity-20"></div>
