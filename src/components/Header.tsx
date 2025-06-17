@@ -1,6 +1,6 @@
-
 import { Search, ShoppingCart, User, Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 import TopBanner from './TopBanner';
 
 const Header = () => {
@@ -21,11 +21,11 @@ const Header = () => {
 
             {/* Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
-              <a href="#" className="text-gray-700 hover:text-purple transition-colors">Home</a>
-              <a href="#" className="text-gray-700 hover:text-purple transition-colors">Products</a>
-              <a href="#" className="text-gray-700 hover:text-purple transition-colors">Categories</a>
-              <a href="#" className="text-gray-700 hover:text-purple transition-colors">About</a>
-              <a href="#" className="text-gray-700 hover:text-purple transition-colors">Contact</a>
+            <Link to="/" className="text-gray-700 hover:text-purple-600 transition-colors">Home</Link>
+            <Link to="/products" className="text-gray-700 hover:text-purple-600 transition-colors">Products</Link>
+            <Link to="/categories" className="text-gray-700 hover:text-purple-600 transition-colors">Categories</Link>
+            <Link to="/about" className="text-gray-700 hover:text-purple-600 transition-colors">About</Link>
+            <Link to="/contact" className="text-gray-700 hover:text-purple-600 transition-colors">Contact</Link>
             </nav>
 
             {/* Search and Actions */}
