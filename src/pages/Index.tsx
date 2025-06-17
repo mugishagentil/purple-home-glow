@@ -9,50 +9,50 @@ import Footer from '@/components/Footer';
 const Index = () => {
   const newArrivals = [
     {
-      image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=300&h=300&fit=crop",
+      image: "/Head Phone.jpeg",
       title: "Wireless Headphones",
       price: "15,000 Rwf",
       rating: 5
     },
     {
-      image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=300&h=300&fit=crop",
-      title: "Running Shoes",
+      image: "/Jordan1.jpeg",
+      title: "Jordan 1 Shoes",
       price: "25,000 Rwf",
       rating: 5
     },
     {
-      image: "https://images.unsplash.com/photo-1586401100295-7a8096fd231e?q=80&w=300&h=300&fit=crop",
-      title: "Handmade Jewelry",
-      price: "8,000 Rwf",
+      image: "/Shoulder Bag.jpeg",
+      title: "Shoulder Bag",
+      price: "18,000 Rwf",
       rating: 5
     },
     {
-      image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=300&h=300&fit=crop",
-      title: "Casual Sneakers",
+      image: "/BRUCEGAO.jpeg",
+      title: "BRUCEGAO's Alligator Bag",
       price: "20,000 Rwf",
       rating: 5
     },
     {
-      image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?q=80&w=300&h=300&fit=crop",
-      title: "Smart Watch",
+      image: "/Trivet Set.jpeg",
+      title: "Trivet Set",
       price: "45,000 Rwf",
       rating: 5
     },
     {
-      image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=300&h=300&fit=crop",
-      title: "Leather Bag",
+      image: "/Dress.jpeg",
+      title: "Dress",
       price: "30,000 Rwf",
       rating: 5
     },
     {
-      image: "https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=300&h=300&fit=crop",
-      title: "Sunglasses",
+      image: "/Samba.jpeg",
+      title: "Samba",
       price: "12,000 Rwf",
       rating: 5
     },
     {
-      image: "https://images.unsplash.com/photo-1484704849700-f032a568e944?q=80&w=300&h=300&fit=crop",
-      title: "Coffee Mug",
+      image: "/flat shoes.jpeg",
+      title: "Flat Shoes",
       price: "5,000 Rwf",
       rating: 5
     }
@@ -60,51 +60,51 @@ const Index = () => {
 
   const topSelling = [
     {
-      image: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?q=80&w=300&h=300&fit=crop",
-      title: "Designer Jacket",
-      price: "35,000 Rwf",
-      rating: 5
-    },
-    {
-      image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=300&h=300&fit=crop",
-      title: "Cotton T-Shirt",
-      price: "12,000 Rwf",
-      rating: 5
-    },
-    {
-      image: "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=300&h=300&fit=crop",
-      title: "Denim Jeans",
-      price: "18,000 Rwf",
-      rating: 5
-    },
-    {
-      image: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?q=80&w=300&h=300&fit=crop",
-      title: "Summer Dress",
-      price: "22,000 Rwf",
-      rating: 5
-    },
-    {
-      image: "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?q=80&w=300&h=300&fit=crop",
-      title: "Fashion Boots",
-      price: "28,000 Rwf",
-      rating: 5
-    },
-    {
-      image: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=300&h=300&fit=crop",
-      title: "Winter Coat",
-      price: "50,000 Rwf",
-      rating: 5
-    },
-    {
-      image: "https://images.unsplash.com/photo-1503341504253-dff4815485f1?q=80&w=300&h=300&fit=crop",
-      title: "Polo Shirt",
+      image: "/Hill Shoes.jpeg",
+      title: "Hill Shoes",
       price: "15,000 Rwf",
       rating: 5
     },
     {
-      image: "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=300&h=300&fit=crop",
-      title: "Sport Shorts",
+      image: "/Women's Trendy.jpeg",
+      title: "Women's Trendy Bomber Jacket",
+      price: "12,000 Rwf",
+      rating: 5
+    },
+    {
+      image: "/Zingj Zingj Shorts Women's Summer Dress.jpeg",
+      title: "Shorts Women's Summer Dress",
+      price: "18,000 Rwf",
+      rating: 5
+    },
+    {
+      image: "/vegan brush.jpeg",
+      title: "Vegan Brush",
+      price: "22,000 Rwf",
+      rating: 5
+    },
+    {
+      image: "/This Drugstore.jpeg",
+      title: "This Drugstore ",
+      price: "28,000 Rwf",
+      rating: 5
+    },
+    {
+      image: "/Table Lamps & Table Lights _ ValueLights.jpeg",
+      title: "Table Lamps & Table Lights _ ValueLights",
+      price: "50,000 Rwf",
+      rating: 5
+    },
+    {
+      image: "/Yankees Branson.jpeg",
+      title: "Yankees Branson",
       price: "10,000 Rwf",
+      rating: 5
+    },
+    {
+      image: "/JBL Flip 6.jpeg",
+      title: "JBL Flip 6",
+      price: "150,000 Rwf",
       rating: 5
     }
   ];

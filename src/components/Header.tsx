@@ -13,9 +13,9 @@ const Header = () => {
             {/* Logo */}
             <div className="flex items-center space-x-2">
               <img 
-                src="/placeholder.svg" 
+                src="/wxc.png" 
                 alt="Rwanda Marketplace Logo" 
-                className="h-10 w-auto"
+                className="h-12 w-auto"
               />
             </div>
 
@@ -30,7 +30,7 @@ const Header = () => {
 
             {/* Search and Actions */}
             <div className="flex items-center space-x-4">
-              <div className="hidden md:flex items-center bg-gray-100 rounded-full px-4 py-2">
+              <div className="hidden md:flex items-center bg-gray-100 rounded-full px-4 py-3">
                 <Search className="w-4 h-4 text-gray-400 mr-2" />
                 <input 
                   type="text" 

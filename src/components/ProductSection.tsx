@@ -27,9 +27,9 @@ const ProductSection = ({ title, products }: ProductSectionProps) => {
           ))}
         </div>
         <div className="text-center mt-8">
-          <button className="text-purple hover:text-purple-700 font-semibold underline">
-            View More
-          </button>
+        <button className="text-black hover:text-purple-700 border border-gray-400 rounded-md px-4 py-2 transition-all duration-300 transform hover:scale-105">
+        View More
+      </button>
         </div>
       </div>
     </section>

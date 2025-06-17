@@ -12,7 +12,7 @@ const Footer = () => {
               <div className="w-8 h-8 bg-purple rounded-full flex items-center justify-center">
                 <span className="text-white font-bold text-sm">R</span>
               </div>
-              <span className="font-bold text-xl">Rwanda Marketplace</span>
+              <span className="font-bold text-xl">WomXchange Rwanda</span>
             </div>
             <p className="text-gray-400 mb-4">
               Empowering women entrepreneurs across Rwanda with a smart marketplace platform.
@@ -24,7 +24,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-purple" />
-                <span className="text-sm text-gray-400">+250 788 123 456</span>
+                <span className="text-sm text-gray-400">+250 784 720 984</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-purple" />
@@ -65,15 +65,15 @@ const Footer = () => {
             </p>
             <div className="bg-gray-800 p-3 rounded-lg">
               <p className="text-sm font-semibold">Store Hours</p>
-              <p className="text-xs text-gray-400">Mon - Fri: 9:00 AM - 6:00 PM</p>
-              <p className="text-xs text-gray-400">Sat - Sun: 10:00 AM - 4:00 PM</p>
+              <p className="text-xs text-gray-400">Mon - Fri: 9:00 AM - 9:00 PM</p>
+              <p className="text-xs text-gray-400">Sat - Sun: 10:00 AM - 9:00 PM</p>
             </div>
           </div>
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400 text-sm">
-            © 2024 Rwanda Marketplace. All rights reserved. Made with ❤️ for women entrepreneurs.
+            © 2024 WomXchange. All rights reserved. Made with for women entrepreneurs.
           </p>
         </div>
       </div>

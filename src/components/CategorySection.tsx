@@ -5,31 +5,31 @@ const CategorySection = () => {
       title: "Cosmetics and Personal Products",
       color: "bg-pink-100",
       textColor: "text-pink-800",
-      image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=400&h=300&fit=crop"
+      image: "/Cosmetics.jpeg"
     },
     {
       title: "Clothes",
       color: "bg-yellow-100",
       textColor: "text-yellow-800",
-      image: "https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=400&h=300&fit=crop"
+      image: "/Clothing.jpeg"
     },
     {
       title: "Made In Rwanda",
       color: "bg-purple-100",
       textColor: "text-purple-800",
-      image: "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?q=80&w=400&h=300&fit=crop"
+      image: "/Made in Rwanda shirts.jpeg"
     },
     {
       title: "Household Products",
       color: "bg-gray-100",
       textColor: "text-gray-800",
-      image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=400&h=300&fit=crop"
+      image: "/House.jpeg"
     },
     {
       title: "Shoes",
       color: "bg-green-100",
       textColor: "text-green-800",
-      image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=400&h=300&fit=crop"
+      image: "/Shoes.jpeg"
     }
   ];
 
@@ -86,7 +86,7 @@ const CategorySection = () => {
                     Shop Now →
                   </button>
                 </div>
-                <div className="absolute right-2 bottom-2 w-24 h-24 rounded-xl overflow-hidden shadow-md">
+                <div className="absolute right-2 bottom-2 w-40 h-40 rounded-xl overflow-hidden shadow-md">
                   <img 
                     src={category.image} 
                     alt={category.title}

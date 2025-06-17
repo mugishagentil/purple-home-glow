@@ -11,34 +11,34 @@ import {
 const TestimonialSection = () => {
   const testimonials = [
     {
-      name: "Sarah M.",
+      name: "Gentil Mugisha",
       rating: 5,
       text: "Amazing quality products and fast delivery. I love supporting local women entrepreneurs!",
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?q=80&w=150&h=150&fit=crop"
+      avatar: "/Gentil.jpg"
     },
     {
-      name: "Grace K.",
+      name: "Gentil Mugisha",
       rating: 5,
       text: "The cosmetics I bought are incredible. Great prices and authentic products from talented women.",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=150&h=150&fit=crop"
+      avatar: "/Gentil.jpg"
     },
     {
-      name: "Marie D.",
+      name: "Gentil Mugisha",
       rating: 5,
       text: "This marketplace changed my shopping experience. So many unique items and great customer service!",
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=150&h=150&fit=crop"
+      avatar: "/Gentil.jpg"
     },
     {
-      name: "Jean P.",
+      name: "Gentil Mugisha",
       rating: 5,
       text: "Excellent customer service and high quality products. Will definitely shop here again!",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&h=150&fit=crop"
+      avatar: "/Gentil.jpg"
     },
     {
-      name: "Alice N.",
+      name: "Gentil Mugisha",
       rating: 5,
       text: "Love the variety of products available. Supporting local businesses has never been easier!",
-      avatar: "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?q=80&w=150&h=150&fit=crop"
+      avatar: "/Gentil.jpg"
     }
   ];
 
