@@ -40,6 +40,10 @@ const Checkout = () => {
     navigate('/order-complete');
   };
 
+  const handleSameAsBillingChange = (checked: boolean | "indeterminate") => {
+    setSameAsBilling(checked === true);
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -87,7 +91,7 @@ const Checkout = () => {
                 <Checkbox 
                   id="same-address" 
                   checked={sameAsBilling}
-                  onCheckedChange={setSameAsBilling}
+                  onCheckedChange={handleSameAsBillingChange}
                 />
                 <Label htmlFor="same-address" className="text-purple-600">Same as billing address</Label>
               </div>
