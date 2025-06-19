@@ -1,16 +1,17 @@
-
 openapi: 3.0.0
 info:
   title: E-commerce API
   version: 1.0.0
   description: API documentation for the e-commerce system
 servers:
-  - url:https://wxw-project.onrender.com
+  - url: https://wxw-project.onrender.com
+
 paths:
+
+  # AUTH
   /api/auth/register:
     post:
-      tags:
-        - Auth
+      tags: [Auth]
       summary: Register a new user
       requestBody:
         required: true
@@ -18,23 +19,18 @@ paths:
           application/json:
             schema:
               type: object
+              required: [name, email, password, role]
               properties:
-                name:
-                  type: string
-                email:
-                  type: string
-                password:
-                  type: string
-                role:
-                  type: string
+                name: { type: string }
+                email: { type: string }
+                password: { type: string }
+                role: { type: string, enum: [admin, seller, buyer] }
       responses:
-        "201":
-          description: User created successfully
+        "201": { description: User created successfully }
 
   /api/auth/login:
     post:
-      tags:
-        - Auth
+      tags: [Auth]
       summary: Login an existing user
       requestBody:
         required: true
@@ -42,26 +38,22 @@ paths:
           application/json:
             schema:
               type: object
+              required: [email, password]
               properties:
-                email:
-                  type: string
-                password:
-                  type: string
+                email: { type: string }
+                password: { type: string }
       responses:
-        "200":
-          description: Login successful
+        "200": { description: Login successful }
 
+  # PRODUCTS
   /api/products:
     get:
-      tags:
-        - Products
+      tags: [Products]
       summary: Get all products
       responses:
-        "200":
-          description: List of products
+        "200": { description: List of products }
     post:
-      tags:
-        - Products
+      tags: [Products]
       summary: Create a new product
       requestBody:
         required: true
@@ -69,44 +61,34 @@ paths:
           application/json:
             schema:
               type: object
+              required: [name, description, price, stock, categoryId]
               properties:
-                name:
-                  type: string
-                description:
-                  type: string
-                price:
-                  type: number
-                stock:
-                  type: integer
-                categoryId:
-                  type: integer
+                name: { type: string }
+                description: { type: string }
+                price: { type: number }
+                stock: { type: integer }
+                categoryId: { type: integer }
       responses:
-        "201":
-          description: Product created
+        "201": { description: Product created }
 
   /api/products/{id}:
     get:
-      tags:
-        - Products
+      tags: [Products]
       summary: Get product by ID
       parameters:
         - in: path
           name: id
-          schema:
-            type: integer
+          schema: { type: integer }
           required: true
       responses:
-        "200":
-          description: Product details
+        "200": { description: Product details }
     put:
-      tags:
-        - Products
+      tags: [Products]
       summary: Update a product
       parameters:
         - in: path
           name: id
-          schema:
-            type: integer
+          schema: { type: integer }
           required: true
       requestBody:
         required: true
@@ -115,43 +97,33 @@ paths:
             schema:
               type: object
               properties:
-                name:
-                  type: string
-                description:
-                  type: string
-                price:
-                  type: number
-                stock:
-                  type: integer
-                categoryId:
-                  type: integer
+                name: { type: string }
+                description: { type: string }
+                price: { type: number }
+                stock: { type: integer }
+                categoryId: { type: integer }
       responses:
-        "200":
-          description: Product updated
+        "200": { description: Product updated }
     delete:
-      tags:
-        - Products
+      tags: [Products]
       summary: Delete a product
       parameters:
         - in: path
           name: id
-          schema:
-            type: integer
+          schema: { type: integer }
           required: true
       responses:
-        "200":
-          description: Product deleted
+        "200": { description: Product deleted }
 
+  # REVIEWS
   /api/products/{productId}/reviews:
     post:
-      tags:
-        - Reviews
+      tags: [Reviews]
       summary: Create a review for a product
       parameters:
         - in: path
           name: productId
-          schema:
-            type: integer
+          schema: { type: integer }
           required: true
       requestBody:
         required: true
@@ -159,19 +131,17 @@ paths:
           application/json:
             schema:
               type: object
+              required: [rating, comment]
               properties:
-                rating:
-                  type: integer
-                comment:
-                  type: string
+                rating: { type: integer, minimum: 1, maximum: 5 }
+                comment: { type: string }
       responses:
-        "201":
-          description: Review added
+        "201": { description: Review added }
 
+  # ORDERS
   /api/orders:
     post:
-      tags:
-        - Orders
+      tags: [Orders]
       summary: Place an order
       requestBody:
         required: true
@@ -179,11 +149,188 @@ paths:
           application/json:
             schema:
               type: object
+              required: [shippingAddress, paymentMethod]
               properties:
-                shippingAddress:
-                  type: string
-                paymentMethod:
-                  type: string
+                shippingAddress: { type: string }
+                paymentMethod: { type: string }
       responses:
-        "201":
-          description: Order created
+        "201": { description: Order created }
+
+    get:
+      tags: [Orders]
+      summary: Get all orders for current user
+      responses:
+        "200": { description: List of user orders }
+
+  /api/orders/{id}:
+    put:
+      tags: [Orders]
+      summary: Update order status (paid/delivered) - admin only
+      parameters:
+        - in: path
+          name: id
+          schema: { type: integer }
+          required: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                isPaid: { type: boolean }
+                isDelivered: { type: boolean }
+      responses:
+        "200": { description: Order updated }
+
+  # PAYMENTS
+  /api/payments:
+    get:
+      tags: [Payments]
+      summary: Get all payments (admin)
+      responses:
+        "200": { description: List of payments }
+
+    post:
+      tags: [Payments]
+      summary: Create a payment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                orderId: { type: integer }
+                amount: { type: number }
+                paymentMethod: { type: string }
+      responses:
+        "201": { description: Payment created }
+
+  # CATEGORIES
+  /api/categories:
+    get:
+      tags: [Categories]
+      summary: Get all categories
+      responses:
+        "200": { description: List of categories }
+    post:
+      tags: [Categories]
+      summary: Create a new category
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [name]
+              properties:
+                name: { type: string }
+      responses:
+        "201": { description: Category created }
+    put:
+      tags: [Categories]
+      summary: Update a category
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [id, name]
+              properties:
+                id: { type: integer }
+                name: { type: string }
+      responses:
+        "200": { description: Category updated }
+    delete:
+      tags: [Categories]
+      summary: Delete a category
+      parameters:
+        - in: query
+          name: id
+          schema: { type: integer }
+          required: true
+      responses:
+        "200": { description: Category deleted }
+
+  # NOTIFICATIONS
+  /api/notifications:
+    get:
+      tags: [Notifications]
+      summary: Get notifications for current user or admin
+      responses:
+        "200": { description: List of notifications }
+
+  # CART
+  /api/cart:
+    get:
+      tags: [Cart]
+      summary: Get current user cart
+      responses:
+        "200": { description: User cart details }
+    post:
+      tags: [Cart]
+      summary: Add or update product in cart
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [productId, quantity]
+              properties:
+                productId: { type: integer }
+                quantity: { type: integer }
+      responses:
+        "200": { description: Cart updated }
+
+  /api/cart/remove:
+    post:
+      tags: [Cart]
+      summary: Remove product from cart
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [productId]
+              properties:
+                productId: { type: integer }
+      responses:
+        "200": { description: Cart updated }
+
+  # DASHBOARDS (optional, role based)
+  /api/admin/dashboard:
+    get:
+      tags: [Dashboard]
+      summary: Admin dashboard info
+      responses:
+        "200":
+          description: Admin welcome message
+
+  /api/seller/dashboard:
+    get:
+      tags: [Dashboard]
+      summary: Seller dashboard info
+      responses:
+        "200":
+          description: Seller welcome message
+
+  /api/buyer/dashboard:
+    get:
+      tags: [Dashboard]
+      summary: Buyer dashboard info
+      responses:
+        "200":
+          description: Buyer welcome message
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+security:
+  - bearerAuth: []
