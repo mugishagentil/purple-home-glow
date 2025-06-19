@@ -21,7 +21,7 @@ const app = express();
 app.use(express.json());
 
 const swaggerDocument = YAML.load('./swagger.yaml');
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // Public auth routes
 app.use('/api/auth', authRoutes);
