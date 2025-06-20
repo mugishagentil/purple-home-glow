@@ -1,34 +1,52 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import cors from 'cors';
+import swaggerUi from 'swagger-ui-express';
+import YAML from 'yamljs';
+
 import authRoutes from './routes/authRoutes.js';
 import orderRoutes from './routes/orderRoutes.js';
 import productRoutes from './routes/productRoutes.js';
 import categoryRoutes from './routes/categoryRoutes.js';
 import paymentRoutes from './routes/paymentRoutes.js';
-import notificationRoutes from './routes/notificationRoutes.js';  // import notificati
+import notificationRoutes from './routes/notificationRoutes.js';
 import { protect, authorizeRoles, errorHandler } from './middleware/authMiddleware.js';
-import swaggerUi from 'swagger-ui-express';
-import YAML from 'yamljs';
-
-
 
 dotenv.config();
 
-// ❌ REMOVE this — no longer needed with Prisma
-// connectDB();
-
 const app = express();
+
+// ✅ CORS configuration
+const allowedOrigins = [
+  'http://localhost:8080',           // for local dev
+  'https://your-frontend-domain.com' // replace with your deployed frontend domain
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
+// ✅ Middleware
 app.use(express.json());
 
+// ✅ Swagger docs
 const swaggerDocument = YAML.load('./swagger.yaml');
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-// Public auth routes
+// ✅ Public routes
 app.use('/api/auth', authRoutes);
-// Public notification routes
 app.use('/api/notifications', notificationRoutes);
 
-// Protected role-based dashboards
+// ✅ Protected role-based dashboards
 app.get('/api/admin/dashboard', protect, authorizeRoles('admin'), (req, res) => {
   res.json({ message: `Welcome Admin ${req.user.name}` });
 });
@@ -41,16 +59,16 @@ app.get('/api/buyer/dashboard', protect, authorizeRoles('buyer'), (req, res) => 
   res.json({ message: `Welcome Buyer ${req.user.name}` });
 });
 
-// API Routes
+// ✅ API routes
 app.use('/api/categories', categoryRoutes);
 app.use('/api/payments', paymentRoutes);
 app.use('/api/orders', orderRoutes);
-app.use('/api/products', productRoutes); // ✅ was listed twice
+app.use('/api/products', productRoutes);
 
-// Error handling
+// ✅ Error handling
 app.use(errorHandler);
 
-// Start server
+// ✅ Start the server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

@@ -23,11 +23,11 @@ import Cart from "./pages/Cart";
 import OrderComplete from "./pages/OrderComplete";
 import Checkout from "./pages/Checkout";
 import NotFound from "./pages/NotFound";
-
+import { AuthProvider } from './contexts/AuthContext'; 
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
+  <AuthProvider>
     <TooltipProvider>
       <Toaster />
       <Sonner />
@@ -38,17 +38,18 @@ const App = () => (
           <Route path="/products" element={<Products />} />
           <Route path="/product/:id" element={<SingleProduct />} />
           <Route path="/contact" element={<Contact />} />
-
+          
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/seller-request" element={<SellerRequest />} />
+          <Route path="/vendor-dashboard" element={<VendorDashboard />} />
           <Route path="/dashboard" element={<Dashboard />} />
+
+          <Route path="/seller-request" element={<SellerRequest />} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/customers" element={<Customers />} />
           <Route path="/vendors" element={<Vendors />} />
           <Route path="/reports" element={<Reports />} />
           <Route path="/products" element={<Products />} />
-          <Route path="/vendor-dashboard" element={<VendorDashboard />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/order-complete" element={<OrderComplete />} />
@@ -57,7 +58,7 @@ const App = () => (
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
-  </QueryClientProvider>
+    </AuthProvider>
 );
 
 export default App;
