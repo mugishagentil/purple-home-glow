@@ -68,6 +68,7 @@ paths:
                 price: { type: number }
                 stock: { type: integer }
                 categoryId: { type: integer }
+                coverImage: { type: string, format: uri }
       responses:
         "201": { description: Product created }
 
