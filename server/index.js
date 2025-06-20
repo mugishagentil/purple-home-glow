@@ -1,5 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
+const cors = require('cors');
 import authRoutes from './routes/authRoutes.js';
 import orderRoutes from './routes/orderRoutes.js';
 import productRoutes from './routes/productRoutes.js';
@@ -9,7 +10,11 @@ import notificationRoutes from './routes/notificationRoutes.js';  // import noti
 import { protect, authorizeRoles, errorHandler } from './middleware/authMiddleware.js';
 import swaggerUi from 'swagger-ui-express';
 import YAML from 'yamljs';
-
+app.use(cors({
+  origin: 'http://localhost:8080', 
+  origin:'',// or "*" to allow all origins (not recommended for production)
+  credentials: true
+}));
 
 
 dotenv.config();
