@@ -1,5 +1,6 @@
 
 import ProductCard from './ProductCard';
+import {Link} from "react-router-dom";
 
 interface ProductSectionProps {
   title: string;
@@ -27,9 +28,11 @@ const ProductSection = ({ title, products }: ProductSectionProps) => {
           ))}
         </div>
         <div className="text-center mt-8">
+          <Link to="/products">
         <button className="text-black hover:text-purple-700 border border-gray-400 rounded-md px-4 py-2 transition-all duration-300 transform hover:scale-105">
         View More
       </button>
+          </Link>
         </div>
       </div>
     </section>

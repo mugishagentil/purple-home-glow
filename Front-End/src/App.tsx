@@ -8,6 +8,16 @@ import Index from "./pages/Index";
 import Products from "./pages/Products";
 import SingleProduct from "./pages/SingleProduct";
 import Contact from "./pages/Contact";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import SellerRequest from "./pages/SellerRequest";
+import Dashboard from "./pages/Dashboard";
+import Orders from "./pages/Orders";
+import Customers from "./pages/Customers";
+import Vendors from "./pages/Vendors";
+import Reports from "./pages/Reports";
+// import Products from "./pages/Products";
+import VendorDashboard from "./pages/VendorDashboard";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,6 +33,16 @@ const App = () => (
           <Route path="/products" element={<Products />} />
           <Route path="/product/:id" element={<SingleProduct />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/seller-request" element={<SellerRequest />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/orders" element={<Orders />} />
+          <Route path="/customers" element={<Customers />} />
+          <Route path="/vendors" element={<Vendors />} />
+          <Route path="/reports" element={<Reports />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/vendor-dashboard" element={<VendorDashboard />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

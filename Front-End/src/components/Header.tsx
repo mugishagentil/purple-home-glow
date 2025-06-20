@@ -11,6 +11,7 @@ const Header = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
+            <Link to="/">
             <div className="flex items-center space-x-2">
               <img 
                 src="/wxc.png" 
@@ -18,6 +19,7 @@ const Header = () => {
                 className="h-12 w-auto"
               />
             </div>
+            </Link>
 
             {/* Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
@@ -41,9 +43,11 @@ const Header = () => {
               <Button variant="ghost" size="icon">
                 <ShoppingCart className="w-5 h-5" />
               </Button>
+              <Link to="/login">
               <Button variant="ghost" size="icon">
                 <User className="w-5 h-5" />
               </Button>
+            </Link>
               <Button variant="ghost" size="icon" className="md:hidden">
                 <Menu className="w-5 h-5" />
               </Button>

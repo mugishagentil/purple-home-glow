@@ -37,11 +37,11 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-purple transition-colors">Home</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-purple transition-colors">Products</a></li>
+              <li><a href="/" className="text-gray-400 hover:text-purple transition-colors">Home</a></li>
+              <li><a href="/products" className="text-gray-400 hover:text-purple transition-colors">Products</a></li>
               <li><a href="#" className="text-gray-400 hover:text-purple transition-colors">Categories</a></li>
               <li><a href="#" className="text-gray-400 hover:text-purple transition-colors">About Us</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-purple transition-colors">Contact</a></li>
+              <li><a href="/contact" className="text-gray-400 hover:text-purple transition-colors">Contact</a></li>
             </ul>
           </div>
 
@@ -49,11 +49,11 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold mb-4">Support</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-purple transition-colors">Help Center</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-purple transition-colors">Shipping Info</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-purple transition-colors">Returns</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-purple transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-purple transition-colors">Terms of Service</a></li>
+              <li><a href="/" className="text-gray-400 hover:text-purple transition-colors">Help Center</a></li>
+              <li><a href="/" className="text-gray-400 hover:text-purple transition-colors">Shipping Info</a></li>
+              <li><a href="/" className="text-gray-400 hover:text-purple transition-colors">Returns</a></li>
+              <li><a href="/" className="text-gray-400 hover:text-purple transition-colors">Privacy Policy</a></li>
+              <li><a href="/" className="text-gray-400 hover:text-purple transition-colors">Terms of Service</a></li>
             </ul>
           </div>
 

@@ -1,5 +1,6 @@
 
 import { Button } from '@/components/ui/button';
+import {Link} from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -13,9 +14,11 @@ const HeroSection = () => {
             <p className="text-lg text-gray-600 mb-10">
             Built for women entrepreneurs in Kigali, WomXchange Rwanda provides a seamless online platform for selling, managing, and expanding your business.
             </p>
+            <Link to="/products">
             <Button className="bg-purple hover:bg-purple-600 text-white px-8 py-4 text-lg rounded-full">
               Shop Now
             </Button>
+            </Link>
           </div>
           <div className="md:w-1/2 flex justify-center animate-fade-in">
             <div className="relative">
