@@ -3,7 +3,7 @@ import prisma from '../prismaClient.js';
 import { notify } from '../utils/notify.js';  // Import notify
 
 export const createProduct = asyncHandler(async (req, res) => {
-  const { name, description, price, stock, categoryId } = req.body;
+  const { name, description, price, stock, categoryId,coverImage } = req.body;
 
   const product = await prisma.product.create({
     data: {
@@ -12,6 +12,7 @@ export const createProduct = asyncHandler(async (req, res) => {
       price,
       stock,
       categoryId,
+      coverImage,
       createdById: req.user.id,
     },
   });
@@ -65,6 +66,7 @@ export const updateProduct = asyncHandler(async (req, res) => {
       description: req.body.description,
       price: req.body.price,
       stock: req.body.stock,
+      coverImage: req.body.coverImage,
       categoryId: req.body.categoryId,
     },
   });

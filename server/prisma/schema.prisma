@@ -36,6 +36,7 @@ model Product {
   price        Float
   stock        Int       @default(0)
   category     Category  @relation(fields: [categoryId], references: [id])
+  coverImage  String   @default("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQinI_44p5jN05YioLyPBhn_1j5tsl7q85rfA&s")
   categoryId   Int
   createdBy    User?     @relation(fields: [createdById], references: [id])
   createdById  Int?
