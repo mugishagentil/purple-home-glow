@@ -1,39 +1,41 @@
 import express from 'express';
 import dotenv from 'dotenv';
-const cors = require('cors');
+import cors from 'cors';
+import swaggerUi from 'swagger-ui-express';
+import YAML from 'yamljs';
+
 import authRoutes from './routes/authRoutes.js';
 import orderRoutes from './routes/orderRoutes.js';
 import productRoutes from './routes/productRoutes.js';
 import categoryRoutes from './routes/categoryRoutes.js';
 import paymentRoutes from './routes/paymentRoutes.js';
-import notificationRoutes from './routes/notificationRoutes.js';  // import notificati
+import notificationRoutes from './routes/notificationRoutes.js';
 import { protect, authorizeRoles, errorHandler } from './middleware/authMiddleware.js';
-import swaggerUi from 'swagger-ui-express';
-import YAML from 'yamljs';
-app.use(cors({
-  origin: 'http://localhost:8080', 
-  origin:'',// or "*" to allow all origins (not recommended for production)
-  credentials: true
-}));
-
 
 dotenv.config();
 
-// ❌ REMOVE this — no longer needed with Prisma
-// connectDB();
-
 const app = express();
+
+// ✅ Middleware
+app.use(cors({
+  origin: 'http://localhost:8080',  // Allow frontend dev server
+  credentials: true
+}));
 app.use(express.json());
 
+// ✅ Swagger setup
 const swaggerDocument = YAML.load('./swagger.yaml');
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-// Public auth routes
+// ✅ Routes
 app.use('/api/auth', authRoutes);
-// Public notification routes
 app.use('/api/notifications', notificationRoutes);
+app.use('/api/categories', categoryRoutes);
+app.use('/api/payments', paymentRoutes);
+app.use('/api/orders', orderRoutes);
+app.use('/api/products', productRoutes);
 
-// Protected role-based dashboards
+// ✅ Dashboards
 app.get('/api/admin/dashboard', protect, authorizeRoles('admin'), (req, res) => {
   res.json({ message: `Welcome Admin ${req.user.name}` });
 });
@@ -46,16 +48,10 @@ app.get('/api/buyer/dashboard', protect, authorizeRoles('buyer'), (req, res) => 
   res.json({ message: `Welcome Buyer ${req.user.name}` });
 });
 
-// API Routes
-app.use('/api/categories', categoryRoutes);
-app.use('/api/payments', paymentRoutes);
-app.use('/api/orders', orderRoutes);
-app.use('/api/products', productRoutes); // ✅ was listed twice
-
-// Error handling
+// ✅ Error handler
 app.use(errorHandler);
 
-// Start server
+// ✅ Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
