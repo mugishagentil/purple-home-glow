@@ -264,7 +264,7 @@ paths:
         "200": { description: List of notifications }
 
   # CART
-  /api/cart:
+  /api/orders/cart:
     get:
       tags: [Cart]
       summary: Get current user cart
