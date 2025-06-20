@@ -16,11 +16,22 @@ dotenv.config();
 
 const app = express();
 
-// ✅ Middleware
+const allowedOrigins = [
+  'http://localhost:8080',           // for local development
+  'https://your-frontend-domain.com' // replace with your deployed frontend URL
+];
+
 app.use(cors({
-  origin: 'http://localhost:8080',  // Allow frontend dev server
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true
 }));
+
 app.use(express.json());
 
 // ✅ Swagger setup
