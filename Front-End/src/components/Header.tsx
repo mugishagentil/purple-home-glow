@@ -1,3 +1,4 @@
+
 import { Search, ShoppingCart, User, Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -13,11 +14,13 @@ const Header = () => {
             {/* Logo */}
             <Link to="/">
             <div className="flex items-center space-x-2">
-              <img 
-                src="/wxc.png" 
-                alt="Rwanda Marketplace Logo" 
-                className="h-12 w-auto"
-              />
+              <Link to="/">
+                <img 
+                  src="/wxc.png" 
+                  alt="Rwanda Marketplace Logo" 
+                  className="h-12 w-auto"
+                />
+              </Link>
             </div>
             </Link>
 
@@ -41,9 +44,15 @@ const Header = () => {
                 />
               </div>
               <Button variant="ghost" size="icon">
-                <ShoppingCart className="w-5 h-5" />
+                {/* <ShoppingCart className="w-5 h-5" /> */}
               </Button>
               <Link to="/login">
+
+              <Link to="/cart">
+                <Button variant="ghost" size="icon">
+                  <ShoppingCart className="w-5 h-5" />
+                </Button>
+              </Link>
               <Button variant="ghost" size="icon">
                 <User className="w-5 h-5" />
               </Button>
