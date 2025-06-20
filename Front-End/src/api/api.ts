@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://wxw-project.onrender.com/',
+  baseURL: 'https://wxw-project.onrender.com/api/',
 });
 
 

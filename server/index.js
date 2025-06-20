@@ -16,9 +16,10 @@ dotenv.config();
 
 const app = express();
 
+// ✅ CORS configuration
 const allowedOrigins = [
-  'http://localhost:8080',           // for local development
-  'https://your-frontend-domain.com' // replace with your deployed frontend URL
+  'http://localhost:8080',           // for local dev
+  'https://your-frontend-domain.com' // replace with your deployed frontend domain
 ];
 
 app.use(cors({
@@ -29,24 +30,23 @@ app.use(cors({
       callback(new Error('Not allowed by CORS'));
     }
   },
-  credentials: true
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
+// ✅ Middleware
 app.use(express.json());
 
-// ✅ Swagger setup
+// ✅ Swagger docs
 const swaggerDocument = YAML.load('./swagger.yaml');
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-// ✅ Routes
+// ✅ Public routes
 app.use('/api/auth', authRoutes);
 app.use('/api/notifications', notificationRoutes);
-app.use('/api/categories', categoryRoutes);
-app.use('/api/payments', paymentRoutes);
-app.use('/api/orders', orderRoutes);
-app.use('/api/products', productRoutes);
 
-// ✅ Dashboards
+// ✅ Protected role-based dashboards
 app.get('/api/admin/dashboard', protect, authorizeRoles('admin'), (req, res) => {
   res.json({ message: `Welcome Admin ${req.user.name}` });
 });
@@ -59,10 +59,16 @@ app.get('/api/buyer/dashboard', protect, authorizeRoles('buyer'), (req, res) => 
   res.json({ message: `Welcome Buyer ${req.user.name}` });
 });
 
-// ✅ Error handler
+// ✅ API routes
+app.use('/api/categories', categoryRoutes);
+app.use('/api/payments', paymentRoutes);
+app.use('/api/orders', orderRoutes);
+app.use('/api/products', productRoutes);
+
+// ✅ Error handling
 app.use(errorHandler);
 
-// ✅ Start server
+// ✅ Start the server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
