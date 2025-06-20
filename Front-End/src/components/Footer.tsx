@@ -1,15 +1,16 @@
-
 import { MapPin, Phone, Mail } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    // Changed py-20 to py-32 to make it significantly longer
+    <footer className="bg-gray-900 text-white py-32">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-purple rounded-full flex items-center justify-center">
+              {/* Note: If you have an image logo, replace this div with an <img> tag */}
+              <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center">
                 <span className="text-white font-bold text-sm">R</span>
               </div>
               <span className="font-bold text-xl">WomXchange Rwanda</span>
@@ -19,15 +20,15 @@ const Footer = () => {
             </p>
             <div className="space-y-2">
               <div className="flex items-center space-x-2">
-                <MapPin className="w-4 h-4 text-purple" />
+                <MapPin className="w-4 h-4 text-purple-600" />
                 <span className="text-sm text-gray-400">Kigali, Rwanda</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Phone className="w-4 h-4 text-purple" />
+                <Phone className="w-4 h-4 text-purple-600" />
                 <span className="text-sm text-gray-400">+250 784 720 984</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Mail className="w-4 h-4 text-purple" />
+                <Mail className="w-4 h-4 text-purple-600" />
                 <span className="text-sm text-gray-400">info@rwandamarketplace.com</span>
               </div>
             </div>
@@ -37,11 +38,11 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li><a href="/" className="text-gray-400 hover:text-purple transition-colors">Home</a></li>
-              <li><a href="/products" className="text-gray-400 hover:text-purple transition-colors">Products</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-purple transition-colors">Categories</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-purple transition-colors">About Us</a></li>
-              <li><a href="/contact" className="text-gray-400 hover:text-purple transition-colors">Contact</a></li>
+              <li><a href="/" className="text-gray-400 hover:text-purple-600 transition-colors">Home</a></li>
+              <li><a href="/products" className="text-gray-400 hover:text-purple-600 transition-colors">Products</a></li>
+              {/* <li><a href="#" className="text-gray-400 hover:text-purple-600 transition-colors">Categories</a></li> */}
+              <li><a href="#" className="text-gray-400 hover:text-purple-600 transition-colors">About Us</a></li>
+              <li><a href="/contact" className="text-gray-400 hover:text-purple-600 transition-colors">Contact</a></li>
             </ul>
           </div>
 
@@ -49,11 +50,11 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold mb-4">Support</h3>
             <ul className="space-y-2">
-              <li><a href="/" className="text-gray-400 hover:text-purple transition-colors">Help Center</a></li>
-              <li><a href="/" className="text-gray-400 hover:text-purple transition-colors">Shipping Info</a></li>
-              <li><a href="/" className="text-gray-400 hover:text-purple transition-colors">Returns</a></li>
-              <li><a href="/" className="text-gray-400 hover:text-purple transition-colors">Privacy Policy</a></li>
-              <li><a href="/" className="text-gray-400 hover:text-purple transition-colors">Terms of Service</a></li>
+              <li><a href="/" className="text-gray-400 hover:text-purple-600 transition-colors">Help Center</a></li>
+              <li><a href="/" className="text-gray-400 hover:text-purple-600 transition-colors">Shipping Info</a></li>
+              <li><a href="/" className="text-gray-400 hover:text-purple-600 transition-colors">Returns</a></li>
+              <li><a href="/" className="text-gray-400 hover:text-purple-600 transition-colors">Privacy Policy</a></li>
+              <li><a href="/" className="text-gray-400 hover:text-purple-600 transition-colors">Terms of Service</a></li>
             </ul>
           </div>
 

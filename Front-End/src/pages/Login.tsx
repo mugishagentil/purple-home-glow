@@ -26,6 +26,10 @@ const Login = () => {
         </div>
 
         <div className="bg-white rounded-lg p-8 shadow-2xl">
+        <Link to="/" className="inline-flex items-center text-gray-600 hover:text-gray-800 mb-4">
+              <ArrowLeft className="w-4 h-4 mr-2" />
+            
+            </Link>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-2">
               <label className="text-sm font-medium text-purple-600">Email</label>
